@@ -1,12 +1,11 @@
 package com.platform.service;
 
 
-import com.platform.dto.BaseDTO;
-import com.platform.dto.request.PageableRequest;
-import com.platform.dto.response.PageResponse;
+import com.platform.common.dto.request.PageableRequest;
+import com.platform.common.dto.response.PageResponse;
 import com.platform.entities.BaseEntity;
 
-public interface BaseCrudService<T extends BaseEntity, DTO extends BaseDTO, C> {
+public interface BaseCrudService<T extends BaseEntity, DTO , C> {
 
     DTO findById(Long id);
     DTO save(C createDTO);

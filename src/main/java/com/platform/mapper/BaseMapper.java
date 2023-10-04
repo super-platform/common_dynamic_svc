@@ -1,7 +1,6 @@
 package com.platform.mapper;
 
 
-import com.platform.dto.BaseDTO;
 import com.platform.entities.BaseEntity;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -12,7 +11,7 @@ import org.mapstruct.MappingTarget;
  * @param <DTO> must be a concrete dto class
  * @param <C> must be a concrete create dto class
  */
-public interface BaseMapper<T extends BaseEntity, DTO extends BaseDTO, C> {
+public interface BaseMapper<T extends BaseEntity, DTO , C> {
     T createDTOToEntity(C createDto);
     T DTOToEntity(DTO dto);
     DTO entityToDTO(T entity);

@@ -1,10 +1,9 @@
 package com.platform.service.impl;
 
 
-import com.platform.dto.BaseDTO;
-import com.platform.dto.request.Filter;
-import com.platform.dto.request.PageableRequest;
-import com.platform.dto.response.PageResponse;
+import com.platform.common.dto.request.Filter;
+import com.platform.common.dto.request.PageableRequest;
+import com.platform.common.dto.response.PageResponse;
 import com.platform.entities.BaseEntity;
 import com.platform.mapper.BaseMapper;
 import com.platform.repository.BaseRepository;
@@ -26,7 +25,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Transactional
-public abstract class BaseCrudServiceImpl<T extends BaseEntity, QT extends EntityPathBase<T>, DTO extends BaseDTO, C> implements BaseCrudService<T, DTO, C> {
+public abstract class BaseCrudServiceImpl<T extends BaseEntity, QT extends EntityPathBase<T>, DTO , C> implements BaseCrudService<T, DTO, C> {
 
     protected BaseRepository<T> repository;
     protected BaseMapper<T, DTO, C> mapper;
@@ -64,7 +63,7 @@ public abstract class BaseCrudServiceImpl<T extends BaseEntity, QT extends Entit
         // Mapping return DTO
         DTO result = mapper.entityToDTO(savedEntity);
 
-        log.info("Create {} successfully with new id: {} ", clazz.getName(), result.getId());
+        log.info("Create {} successfully with new id: {} ", clazz.getName(), savedEntity.getId());
         // Return
         return result;
     }

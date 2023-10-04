@@ -57,6 +57,12 @@
 			<classifier>jakarta</classifier>
 			<version>${querydsl.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.platform</groupId>
+			<artifactId>common</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 
 
